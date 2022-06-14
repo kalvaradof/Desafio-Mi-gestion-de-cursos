@@ -1,112 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
-      crossorigin="anonymous"
-    />
-  </head>
-  <body>
-    <div id="AgregarCurso">
-      <h2 class="pt-3">Agregar Cursos</h2>
 
-      <div class="container pt-5 w-50">
-        <div>
-          <div class="form-group row">
-            <label for="name" class="col-sm-2 col-form-label">Nombre</label>
-            <div class="col-sm-10">
-              <input
-                type="text"
-                class="form-control"
-                id="nombre"
-                value="Javascript"
-              />
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="email" class="col-sm-2 col-form-label"
-              >Nivel técnico</label
-            >
-            <div class="col-sm-10">
-              <input
-                type="text"
-                class="form-control"
-                id="nivelTecnico"
-                value="5"
-              />
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="rut" class="col-sm-2 col-form-label"
-              >Fecha de inicio</label
-            >
-            <div class="col-sm-10">
-              <input
-                type="date"
-                class="form-control"
-                id="fechaInicio"
-                value="2020-11-23"
-              />
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="edad" class="col-sm-2 col-form-label">Duración</label>
-            <div class="col-sm-10">
-              <input
-                type="text"
-                class="form-control"
-                id="duracion"
-                value="12"
-              />
-            </div>
-          </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+</head>
 
-          <button
-            onclick="nuevoCurso()"
-            id="agregar"
-            class="m-auto btn btn-success"
-          >
-            Agregar
-          </button>
-          <button
-            onclick="editarCurso()"
-            id="editar"
-            class="m-auto btn btn-info"
-          >
-            Editar
-          </button>
+<body>
+  <div id="AgregarCurso">
+    <h2 class="pt-3">Agregar Cursos</h2>
+
+    <div class="container pt-5 w-50">
+      <div>
+        <div class="form-group row">
+          <label for="name" class="col-sm-2 col-form-label">Nombre</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="nombre" value="Javascript" />
+          </div>
         </div>
-      </div>
-    </div>
-    <div id="ListaCursos">
-      <hr />
-      <hr />
-      <h2>Tabla de Cursos</h2>
+        <div class="form-group row">
+          <label for="email" class="col-sm-2 col-form-label">Nivel técnico</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="nivelTecnico" value="5" />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="rut" class="col-sm-2 col-form-label">Fecha de inicio</label>
+          <div class="col-sm-10">
+            <input type="date" class="form-control" id="fechaInicio" value="2020-11-23" />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="edad" class="col-sm-2 col-form-label">Duración</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="duracion" value="12" />
+          </div>
+        </div>
 
-      <div class="container pt-5 w-75">
-        <table class="table">
-          <thead class="thead-dark">
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Nombre</th>
-              <th scope="col">Nivel Técnico</th>
-              <th scope="col">Fecha de Inicio</th>
-              <th scope="col">Duración</th>
-              <th scope="col">-</th>
-            </tr>
-          </thead>
-          <tbody id="cuerpo"></tbody>
-        </table>
+        <button onclick="nuevoCurso()" id="agregar" class="m-auto btn btn-success">
+          Agregar
+        </button>
+        <button onclick="editarCurso()" id="editar" class="m-auto btn btn-info">
+          Editar
+        </button>
       </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="index.js"></script>
-  </body>
+  </div>
+  <div id="ListaCursos">
+    <hr />
+    <hr />
+    <h2>Tabla de Cursos</h2>
+
+    <div class="container pt-5 w-75">
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Nivel Técnico</th>
+            <th scope="col">Fecha de Inicio</th>
+            <th scope="col">Duración</th>
+            <th scope="col">-</th>
+          </tr>
+        </thead>
+        <tbody id="cuerpo"></tbody>
+      </table>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="index.js"></script>
+</body>
+
 </html>
 
 <style>
@@ -140,12 +107,10 @@
           <td>${c.fecha}</td>
           <td>${c.duracion}</td>
           <td>
-            <button class="btn btn-warning" onclick="prepararCurso(${i},'${
-          c.id
-        }')">Editar</button>
-            <button class="btn btn-danger" onclick="eliminarCurso(${i},'${
-          c.id
-        }')">Eliminar</button>
+            <button class="btn btn-warning" onclick="prepararCurso(${i},'${c.id
+          }')">Editar</button>
+            <button class="btn btn-danger" onclick="eliminarCurso(${i},'${c.id
+          }')">Eliminar</button>
           </td>
         </tr>
       `;
